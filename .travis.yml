@@ -17,5 +17,16 @@ install:
 # command to run tests
 script: python setup.py test
 
+deploy:
+  provider: pypi
+  distributions: "sdist bdist_wheel"
+  skip_existing: true
+  user: gijskant
+  password:
+    secure: CxeUf8VZj3CawZbKkTjE/ZTghPnQtN9SIqrYWsr/ZUqyGEkBgWmOVAIoFQiXvNdPglDsVEtdr3SgY+Yv4R9vAos1TBCAbnQq4tF5h1BF55+Sscntv9R0Kou4xbZ4pg3hk9dcLivDSzfZasFSzNhDZBlhvH0WjkXd3uCZjSoEgFxnmZnr18w7UCQ9aEPHiAInYQHFabdfvNoy0RI+imMrZP3fl1yFu5LPDhVw02Z5TSOFxwPF3qzvyE0zkRIWuzBW/KfUWFQnelH0JmZX5adnCndq++B8yrqxWvWVC2misTIHoEi3ZyKFe1Izppobgh9icqH/tZj4p4BluBBekDyItpZOfWtxWVhHYkI0IBZmyZ0EmVZKOYZTUkEi96zfKAbul3wKu9f1/3/jBht5T8Dtu+mLBOwq9yAAfdAvW2EBiPqhTXscloTMlszx+UEM6fVRyWtfhoqxgLOHN9BGG8+1aTfLNxvtMbfmnMw8uQujI9uC/Kgj6cQwRGaNcpzrfcB00i9y3qsVrzyfClk41MqsM3S3yc7fVwNp5l+pHEU8NEY398+WgSZQvhpIq7O7FALPHNdCgBA/iAdostQonCo7mmS0GTO75TX7eODYuUIdSRLeUKY7t3/4/pfQ0c9XiGeAfgPGxcTDPkdpAL2ZKXinRjM1Gt5lCWHBWanlm0HmFbQ=
+  on:
+    tags: true
+    branch: master
+
 after_success:
   - codecov
