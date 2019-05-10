@@ -11,11 +11,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   installation
-   usage
-   contributing
-   authors
-   history
+   modules
+
 
 Feedback
 ========
@@ -24,4 +21,4 @@ If you have any suggestions or questions about **ClaML reader** feel free to ema
 at gijs@thehyve.nl.
 
 If you encounter any errors or problems with **ClaML reader**, please let me know!
-Open an Issue at the GitHub http://github.com/thehyve/python_claml main repository.
+Open an Issue at the GitHub https://github.com/thehyve/python_claml main repository.

@@ -14,26 +14,23 @@ if sys.version_info < (3, 6):
             sys.version_info[0], sys.version_info[1])
     )
 
-if sys.argv[-1] == 'publish':
-    os.system('python setup.py sdist upload')
-    sys.exit()
-
 with open('requirements.txt', 'r') as f:
     required_packages = f.read().splitlines()
 
-readme = open('README.rst').read()
-doclink = """
-Documentation
--------------
+here = os.path.abspath(os.path.dirname(__file__))
 
-The full documentation is at http://python_claml.rtfd.org."""
-history = open('HISTORY.rst').read().replace('.. :changelog:', '')
+# To update the package version number, edit fhir2transmart/__version__.py
+version = {}
+with open(os.path.join(here, 'python_claml', '__version__.py')) as f:
+    exec(f.read(), version)
+
+readme = open('README.rst').read()
 
 setup(
     name='python_claml',
-    version='0.1.0',
+    version=version['__version__'],
     description='A ClaML reader for Python.',
-    long_description=readme + '\n\n' + doclink + '\n\n' + history,
+    long_description=readme + '\n\n',
     author='Gijs Kant',
     author_email='gijs@thehyve.nl',
     url='https://github.com/thehyve/python_claml',
@@ -53,8 +50,7 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: Implementation :: PyPy',
+        'Programming Language :: Python :: 3.6'
     ],
     test_suite='tests',
     setup_requires=[
@@ -63,7 +59,9 @@ setup(
         # dependencies for `python setup.py build_sphinx`
         'sphinx',
         'sphinx_rtd_theme',
-        'recommonmark'
+        'recommonmark',
+        # dependency for `python setup.py bdist_wheel`
+        'wheel'
     ],
     tests_require=[
         'pytest',

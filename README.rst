@@ -10,7 +10,7 @@ ClaML reader
    :target: https://codecov.io/gh/thehyve/python_claml
 
 A ClaML reader for Python.
-Created from the ClaML.dtd file from the DIMDI_, using PyXB_.
+Generated from the ClaML.dtd file from the DIMDI_, using PyXB_.
 
 
 Features
@@ -37,18 +37,64 @@ Resources
 .. _PyXB: http://pyxb.sourceforge.net
 
 
+Usage
+-----
+
+To use ClaML reader in a project:
+
+.. code-block:: python
+
+  import python_claml
+
+
+Example
+^^^^^^^
+
+Read and parse the contents of a ClaML file and print all class codes:
+
+.. code-block:: python
+
+    with open(file_name, 'r') as input_file:
+        # Read file contents
+        contents = input_file.read()
+        # Parse ClaML document
+        classification: ClaML = claml.CreateFromDocument(contents)
+        for cls in classification.Class:
+            print(cls.code)
+
+
 Development
 -----------
 
-The code was generated using the following commands: ::
+The code was generated using the following commands:
+
+.. code-block:: bash
 
   pyxbgen --schema-root=../resources -u ClaML.xsd -m python_claml.claml
 
-Build: ::
 
+Install
+^^^^^^^
+
+From the package index:
+
+.. code-block:: bash
+
+  pip install python-claml
+
+or from source:
+
+.. code-block:: bash
+
+  git clone https://github.com/thehyve/python_claml.git
+  cd python_claml
   pip install .
 
-Test: ::
+
+Test
+^^^^
+
+.. code-block:: bash
 
   python setup.py test
 
