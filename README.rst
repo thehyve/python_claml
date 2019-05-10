@@ -2,12 +2,21 @@
 ClaML reader
 =============================
 
-|Build status| |codecov|
+|Build status| |codecov| |pypi| |downloads|
 
 .. |Build status| image:: https://travis-ci.org/thehyve/python_claml.svg?branch=master
+   :alt: Build status
    :target: https://travis-ci.org/thehyve/python_claml/branches
 .. |codecov| image:: https://codecov.io/gh/thehyve/python_claml/branch/master/graph/badge.svg
+   :alt: codecov
    :target: https://codecov.io/gh/thehyve/python_claml
+.. |pypi| image:: https://img.shields.io/pypi/v/python-claml.svg
+   :alt: PyPI
+   :target: https://pypi.org/project/python-claml/
+.. |downloads| image:: https://img.shields.io/pypi/dm/python-claml.svg
+   :alt: PyPI - Downloads
+   :target: https://pypi.org/project/python-claml/
+
 
 A ClaML reader for Python.
 Generated from the ClaML.dtd file from the DIMDI_, using PyXB_.
