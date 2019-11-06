@@ -26,8 +26,9 @@ Features
 --------
 
 Reads classification files in ClaML format (XML) into Python objects.
-See `<examples/test1.py>`_ for a usage example.
+See `examples/test1.py`_ for a usage example.
 
+.. _`examples/test1.py`: https://github.com/thehyve/python_claml/blob/master/examples/test1.py
 
 Resources
 ---------
@@ -120,4 +121,6 @@ License
 
 Copyright (c) 2019 The Hyve B.V.
 
-The ClaML reader is licensed under the MIT License. See the file `<LICENSE>`_.
+The ClaML reader is licensed under the MIT License. See the file `LICENSE`_.
+
+.. _`LICENSE`: https://github.com/thehyve/python_claml/blob/master/LICENSE
